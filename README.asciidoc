@@ -1,0 +1,16 @@
+= Intershop CI Setup Template
+:latestRevision: 1.0.0
+:toc:
+
+== Summary
+This is a template for the Intershop CI setup. This project provides a build configuration for all necessary Intershop CI setup sources. It is based on https://github.com/IntershopCommunicationsAG/intershop-cisetup-plugin['intershop-cisetup-plugin'].
+The complete documentation for the setup of an Intershop CI infrastructure (https://support.intershop.com/kb/index.php/Display/X27327['Cookbook - Setup CI Infrastructure']) is located in the Intershop Knownledge Base.
+
+== Usage
+It is possible to create your https://github.com/IntershopCommunicationsAG/intershop-cisetup-template.git[own clone] of this project or you can download a https://github.com/IntershopCommunicationsAG/intershop-cisetup-template/archive/master.zip[zip] with all necessary files.
+
+After the adaption of the build file (build.gradle) for your own project setup, you can execute the template tasks. For more information please see 
+
+* https://github.com/IntershopCommunicationsAG/intershop-cisetup-plugin 
+* https://support.intershop.com/kb/index.php/Display/X27327.
+

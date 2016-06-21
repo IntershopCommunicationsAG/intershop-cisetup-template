@@ -1,0 +1,150 @@
+plugins {
+    id 'com.intershop.gradle.cisetup' version '1.0.0'
+}
+
+IntershopCISetup {
+    /**
+     *  Configures directories that sources are generated into.
+     **/
+    directories {
+
+        /**
+         * Base directory for all generated sources.
+         **/
+        //TODO: Provide an absolute path, e.g. '/home/developer/intershop-ci/source' on Linux resp.'C:/developer/intershop-ci' on Windows
+        setupDirectory = 'intershop-cisetup-sources'
+
+        /**
+         *  ... contains
+         *        - corporate distribution
+         *        - deployment example project
+         **/
+        devOpsDir = "${setupDirectory}/devops"
+
+        /**
+         *  ... contains all projects
+         *        - oracle driver project
+         *        - project directories
+         **/
+        projectsDir = "${setupDirectory}/projects"
+    }
+
+    /**
+     *  Repository Settings
+     *  For build and deployment a remote repository is necessary.
+     *  This configuration is used by a special corporate distribution.
+     *  The configuration parameters are also used in the configuration 
+     *  of the wrapper in all projects.
+     **/
+    repository {
+        /**
+         * Technical enterprise or corporate name.
+         * This is used for group/organization of generated artifacts in
+         * the artifact repository.
+         */
+        //TODO: Provide a reverse domain name, e.g. 'com.corporate'
+        corporateName = 'test.corporatename'
+
+        /**
+         * Base URL for all repositories on the repository server.
+         */
+        //TODO: Provide URL (e.g. http://nexus:8081/nexus/content/repositories)
+        repoBaseURL = ''
+
+        /**
+         *  A list of alternative host names. Can be used when having multiple
+         *  repository servers proxying each other.
+         */
+        //repoHosts = ['nexus', 'nexus.corporate.com']
+
+        /**
+         * Repository path of distributions (see corporate distribution).
+         */
+        repoDistributionsPath = 'repositories/distributions'
+
+        /**
+         * Repository path of all own project releases.
+         */
+        repoReleasesPath = 'repositories/releases'
+
+        /**
+         * Repository path of snapshots.
+         */
+        repoSnapshotsPath = 'repositories/snapshots'
+
+        /**
+         * Group path of all repositories with component releases
+         */
+        groupReleasePath = 'groups/components'
+
+        /**
+         * Gradle version to base corporate distribution on.
+         * Must be compatible with Gradle tools version defined in versions block.
+         */
+        gradleBaseVersion = '2.11'
+
+        /**
+         * Initial version of the corporate distribution.
+         */
+        distributionVersion = '2.0.0'
+
+        /**
+         * If the distribution stored on an alternative path (separate web server)
+         * It is necessary to specify the whole URL. Otherwise the URL will be
+         * generated from the previous configuration.
+         *
+         * Defaults to
+         * ${repoBaseURL}/${repoDistributionsPath}/gradle-dist/corporate_gradle_${gradleBaseVersion}/${distributionVersion}/corporate_gradle_${gradleBaseVersion}-${distributionVersion}-bin.zip
+         */
+         //distributionURL=''
+    }
+
+    /**
+     *  Version settings
+     *  For build and deployment of projects it is necessary to configure the information about the used Intershop versions.
+     **/
+    versions {
+        /**
+         *  Version of the used Gradle based build and deployment tools.
+         *  Defaults to 2.11.0.
+         */
+        intershopGradleToolsVersion = '2.11.0'
+
+        /**
+         * Version of the deployment bootstrap plugin
+         * Defaults to 2.11.0
+         */
+        intershopDeploymentBootstrapVersion = '2.11.0'
+
+        /**
+         * Oracle client version.
+         */
+        //TODO: Specify the version of used Oracle driver
+        oracleClientVersion = '12.1.0.2.0'
+
+        /**
+         * This is the version of the cartridge with the necessary Oracle driver libraries
+         * of the original Intershop assemblies. It is possible to overwrite this in an own 
+         * assembly.
+         */
+        //TODO: specify an own cartridge version if necessary
+        oracleCartridgeVersion = '12.1.0.2.0.0'
+    }
+
+    intershopProject {
+        /**
+         * Technical name of the project. This is also used for the name of the multi project,
+         * that contains all components (cartridges) and the assembly build.
+         **/
+        //TODO: Provide a name using only letters, numbers and underscores (no spaces or other special characters), e.g. 'corporateshop'
+        projectName = 'corporateshop'
+    }
+
+    /**
+     *  CI server configuration settings
+     **/
+    ciServer {
+        // Hostname of the ci server or ci server agent which runs the assembly integration test
+        hostName = 'ciserverhost'
+    }
+}
