@@ -118,9 +118,9 @@ IntershopCISetup {
 
         /**
          * Oracle client version.
+         * 12.1.0.2 is the latest available Oracle version
          */
-        //TODO: Specify the version of used Oracle driver
-        oracleClientVersion = '12.1.0.2.0'
+        oracleClientVersion = '12.1.0.2'
 
         /**
          * This is the version of the cartridge with the necessary Oracle driver libraries
