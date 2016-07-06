@@ -48,7 +48,7 @@ IntershopCISetup {
         /**
          * Base URL for all repositories on the repository server.
          */
-        //TODO: Provide URL (e.g. http://nexus:8081/nexus/content/repositories)
+        //TODO: Provide URL (e.g. http://nexus:8081/nexus/content)
         repoBaseURL = ''
 
         /**
