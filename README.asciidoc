@@ -13,4 +13,5 @@ After the adaption of the build file (build.gradle) for your own project setup, 
 
 * https://github.com/IntershopCommunicationsAG/intershop-cisetup-plugin 
 * https://support.intershop.com/kb/index.php/Display/X27327.
+* (https://support.intershop.com/kb/index.php/Display/279D85)
 
