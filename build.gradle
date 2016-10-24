@@ -108,13 +108,13 @@ IntershopCISetup {
          *  Version of the used Gradle based build and deployment tools.
          *  Defaults to 2.11.1.
          */
-        intershopGradleToolsVersion = '2.11.1'
+        intershopGradleToolsVersion = '2.11.4'
 
         /**
          * Version of the deployment bootstrap plugin
          * Defaults to 2.11.1
          */
-        intershopDeploymentBootstrapVersion = '2.11.1'
+        intershopDeploymentBootstrapVersion = '2.11.4'
 
         /**
          * Oracle client version.
