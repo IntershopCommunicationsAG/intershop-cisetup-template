@@ -58,11 +58,6 @@ IntershopCISetup {
         //repoHosts = ['nexus', 'nexus.corporate.com']
 
         /**
-         * Repository path of distributions (see corporate distribution).
-         */
-        repoDistributionsPath = 'repositories/distributions'
-
-        /**
          * Repository path of all own project releases.
          */
         repoReleasesPath = 'repositories/releases'
@@ -94,7 +89,7 @@ IntershopCISetup {
          * generated from the previous configuration.
          *
          * Defaults to
-         * ${repoBaseURL}/${repoDistributionsPath}/gradle-dist/corporate_gradle_${gradleBaseVersion}/${distributionVersion}/corporate_gradle_${gradleBaseVersion}-${distributionVersion}-bin.zip
+         * ${repoBaseURL}/distributions/gradle-dist/${${corporateName without spaces}}/${distributionVersion}/${${corporateName without spaces}}-${distributionVersion}.zip
          */
          //distributionURL=''
     }
@@ -105,16 +100,10 @@ IntershopCISetup {
      **/
     versions {
         /**
-         *  Version of the used Gradle based build and deployment tools.
-         *  Defaults to 2.11.1.
-         */
-        intershopGradleToolsVersion = '2.11.4'
-
-        /**
          * Version of the deployment bootstrap plugin
          * Defaults to 2.11.1
          */
-        intershopDeploymentBootstrapVersion = '2.11.4'
+        intershopDeploymentBootstrapVersion = '2.11.6'
 
         /**
          * Oracle client version.
