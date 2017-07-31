@@ -1,5 +1,5 @@
 plugins {
-    id 'com.intershop.gradle.cisetup' version '1.5.4'
+    id 'com.intershop.gradle.cisetup' version '2.0.0'
 }
 
 IntershopCISetup {
@@ -56,11 +56,6 @@ IntershopCISetup {
          *  repository servers proxying each other.
          */
         //repoHosts = ['nexus', 'nexus.corporate.com']
-
-        /**
-         * Repository path of all own project releases.
-         */
-        repoReleasesPath = 'repositories/releases'
 
         /**
          * Repository path of snapshots.
