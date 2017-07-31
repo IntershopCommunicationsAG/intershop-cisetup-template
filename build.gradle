@@ -84,7 +84,7 @@ IntershopCISetup {
          * generated from the previous configuration.
          *
          * Defaults to
-         * ${repoBaseURL}/distributions/gradle-dist/${${corporateName without spaces}}/${distributionVersion}/${${corporateName without spaces}}-${distributionVersion}.zip
+         * ${repoBaseURL}/distributions/gradle-dist/${getDistributionName()}/${distributionVersion}/${getDistributionName()}-${distributionVersion}.zip
          */
          //distributionURL=''
     }
