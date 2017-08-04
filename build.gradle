@@ -1,5 +1,5 @@
 plugins {
-    id 'com.intershop.gradle.cisetup' version '2.0.0'
+    id 'com.intershop.gradle.cisetup' version '2.2.0'
 }
 
 IntershopCISetup {
@@ -58,6 +58,13 @@ IntershopCISetup {
         //repoHosts = ['nexus', 'nexus.corporate.com']
 
         /**
+         * If you use different repositories for ivy and mvn
+         * this property must configured with false.
+         * Default: true
+         */
+        // singleRepos = false
+
+        /**
          * Repository path of snapshots.
          */
         repoSnapshotsPath = 'repositories/snapshots'
@@ -66,6 +73,34 @@ IntershopCISetup {
          * Group path of all repositories with component releases
          */
         groupReleasePath = 'groups/components'
+
+        /**
+         * Ivy repository path with releases
+         * This configuration is only necessary if singleRepos is false.
+         * Default: ivy-releases
+         */
+        // ivyRepoReleasesPath = 'ivy-releases'
+
+        /**
+         * Maven repository path with releases
+         * This configuration is only necessary if singleRepos is false.
+         * Default: ivy-releases
+         */
+        // mvnRepoReleasesPath = 'mvn-releases'
+
+        /**
+         * Ivy repository path with snapshots
+         * This configuration is only necessary if singleRepos is false.
+         * Default: ivy-releases
+         */
+        // ivyRepoSnapshotsPath = 'ivy-snapshots'
+
+        /**
+         * Maven repository path with snapshots
+         * This configuration is only necessary if singleRepos is false.
+         * Default: ivy-releases
+         */
+        // mvnRepoSnapshotsPath = 'mvn-snapshots'
 
         /**
          * Gradle version to base corporate distribution on.
@@ -96,7 +131,7 @@ IntershopCISetup {
     versions {
         /**
          * Version of the deployment bootstrap plugin
-         * Defaults to 2.11.1
+         * Defaults to 2.11.6
          */
         intershopDeploymentBootstrapVersion = '2.11.6'
 
