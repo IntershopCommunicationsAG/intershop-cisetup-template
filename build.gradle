@@ -117,10 +117,13 @@ IntershopCISetup {
          * If the distribution stored on an alternative path (separate web server)
          * It is necessary to specify the whole URL. Otherwise the URL will be
          * generated from the previous configuration.
-         *
-         * Defaults to
+         * 
+         * Default:
          * ${repoBaseURL}/distributions/gradle-dist/${getDistributionName()}/${distributionVersion}/${getDistributionName()}-${distributionVersion}.zip
+         * For Nexus it is necessary to change the path to (the path must be complete without placeholders.)
+         * ${repoBaseURL}/repositories/distributions/gradle-dist/...
          */
+         //TODO: Specify the correct url.
          //distributionURL=''
     }
 
