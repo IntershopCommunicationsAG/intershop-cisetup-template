@@ -1,5 +1,5 @@
 plugins {
-    id 'com.intershop.gradle.cisetup' version '2.2.0'
+    id 'com.intershop.gradle.cisetup' version '2.2.1'
 }
 
 IntershopCISetup {
@@ -136,7 +136,7 @@ IntershopCISetup {
          * Version of the deployment bootstrap plugin
          * Defaults to 2.11.6
          */
-        intershopDeploymentBootstrapVersion = '2.11.6'
+        intershopDeploymentBootstrapVersion = '2.11.10'
 
         /**
          * Oracle client version.
